@@ -1,0 +1,79 @@
+public class AlertPopup
+
+public static void main(String[] args)
+{
+webDriver driver = new crhomeDriver();
+driver.get("https://demoapp.skillrary.com/ ");
+WebElement course = driver.findElement(By.id("course"));
+Actions a = new Actions(driver);
+a.moveToElement(course).perform();
+driver.findElement(By.xpath("(//a[text()='Selenium'])[1]")).click();
+driver.findElement(By.xpath("//button[@ondblclick='addtocart()']").click();
+driver.switchTo().alert().accept();
+
+}
+
+
+Q) Syntax of notification Popup
+
+ChromeOptions options = new ChromOptions();
+options.addArguments("--disable-notifications");
+WebDriver driver = new Chromedriver(options);
+driver.manage().window().maximize();
+driver.get("https://www.quikr.com/");
+driver.manage().timeouts().implicitlyWait(10,TimeUnit.
+SECONDS);
+
+
+
+Q) syntax of Alert pop up/JavaScript pop up/confirmation pop up 
+
+driver.switchTo().alert().accept();
+          or
+Alert al = driver.switchtTo().alert();
+al.accept();
+al.dismiss();
+al.getText();
+
+
+Q)Syntax Child browser
+
+Handle parent window
+String Parent = driver.getWindowhandle();
+driver.switchTo().window(Parent);
+
+Handle Child window
+Set<String> Child = driver.getWindowhandles();
+for(String b : Child)
+{ 
+  driver.switchTo().window(b);
+}
+
+
+
+Q) Syntax to handle scrollbar
+Syntax javaScriptExecutor with Location 
+JavascriptExecutor js = (JavascriptExxecutor) driver ;
+js.executScript("window.scrollBy("+x+", "+y+")");
+
+Syntaxt JavascriptExecutor without Location
+JavascriptExecutor js = (JavascriptExecutor) driver;
+js.executeScript("arguments[0],scrollIntoView();",ele);
+
+
+
+
+Read Data from Propertie file
+FileInputStream fis = new FileInputStream();
+properties pro = new Properties();
+
+pro.load(fis);
+String URL=pro.getproperty("url");
+String USERNAME = pro.getproperty("username");
+
+WebDriver driver = new ChromeDriver();	
+
+driver.get(URL);
+driver.findElement(By.xpath("//tagname[@AN='AV']")).sendkeys(USERNAME);
+
+
